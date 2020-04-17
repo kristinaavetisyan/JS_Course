@@ -1,7 +1,7 @@
 // #1 ******* Insert a number. Print ‘yes’ if the number is prime, ‘no’ otherwise *******
 
 function isPrimeNum(num) {
-    if (num % 2 === 0) {
+    if (num % 2 === 0 && num > 1) {
         console.log("no");
     } else if (num % 2 !== 0 && num > 1) {
         console.log("yes");
@@ -70,31 +70,29 @@ if (prod % sum === 0) {
 
 // #10 ******* Given an array of numbers. Find the index of the second maximum element *******
 
-
-let arr = [12, 34, 5, 25, 6];
-let max1 = Math.max(...arr);
-arr.indexOf(max1);
-arr.splice(1, 1, 1);
-let maxSec = Math.max(...arr);
-arr.indexOf(maxSec)
-
+funtion secondMax(arr){
+    let max1 = Math.max(...arr);
+    arr.indexOf(max1);
+    arr.splice(1, 1, 1);
+    let maxSec = Math.max(...arr);
+    arr.indexOf(maxSec)
+}
+secondMax();
 
 /* #11 Given an array of numbers, padding amount and repeat count. Pad the array in the following way: the padding amount specifies how many elements should be taken from the array edges, the repeat amount specifies how many times the pad should be repeated. Also, you should check that  padding amount <= length of array. */
 
-let arr1 = [1, 2, 3, 4];
-let padAmount = 1;
-let repeat = 3;
-let x = arr1[0];
-let y = arr1[arr1.length - 1];
+function func(arr1, padAmount, repeat){
+    let x = arr1[0];
+    let y = arr1[arr1.length - 1];
 
-for (let i = 0; i < repeat; i++) {
-    if (padAmount <= arr1.length) {
-        arr1.unshift(x);
-        arr1.push(y);
-    } else {
-        console.log("Invalid padding amount")
+    for (let i = 0; i < repeat; i++) {
+        if (padAmount <= arr1.length) {
+            arr1.unshift(x);
+            arr1.push(y);
+        } else {
+            console.log("Invalid padding amount")
+        }
     }
 }
-console.log(arr1)
-
+func();
 
